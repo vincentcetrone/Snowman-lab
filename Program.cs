@@ -134,7 +134,7 @@ namespace mis221_snowmanlab_vincentcetrone
         {
             return true;
         }
-
+        return false;
 
         }
 
@@ -158,8 +158,8 @@ namespace mis221_snowmanlab_vincentcetrone
             /*SetDisplayWord to return a character array of 
             * underscores to match the word returned in step 3
             */
-        char[]underScore = new char(wordlength)
-        for(int i=0; i<wordlength; i++)
+        char[]underScore = new char(word.length);
+        for(int i=0; i<word.length; i++)
         {
             underScore(i)="_";
         }
@@ -175,34 +175,26 @@ namespace mis221_snowmanlab_vincentcetrone
             on the words in the file
             */
             GetAllWords();
-            Random randomWord = new Random();
-            int number = randomWord.Next(Count);
-
-            Console.WriteLine(GetAllWords[number]);
-            return words[number];
+            string[]word =new string(7);
+            Random rnd = new Random();
+            int number = rnd.Next(7);
+            return word[number];
 
         }
 
-        static int GetAllWords()
+        static async int GetAllWords()
         {
             //Get all the words from a file and store them in an array, returns the amount of words their our
             int count = 0;
-            string[] words = new string[50];
-
             StreamReader infile = new StreamReader("words.txt");
 
-            string line = infile.Readline();
-
-            while (line != null)
+            for(int i =0; i < count; i++);
             {
-                words[count] = line;
+                string[]totalWords = new string[i];
                 count++;
-                line = infile.Readline();
             }
-
             infile.Close();
             return count;
-
 
         }
 
